@@ -1,7 +1,7 @@
 # VpyK - simple vk.com api library for python 3.x
 
 ***-How to start longpolling?***
-```
+```python
 from VpyK import vkapi
 access_token = 'YOUR ACCESS TOKEN'
 v = '8.92'
