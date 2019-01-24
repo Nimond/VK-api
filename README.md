@@ -1,4 +1,4 @@
-# VpyK - simple vk.com api library for python 3.x
+# VpyK - vk.com api library
 
 ***-How to start longpolling?***
 ```python
