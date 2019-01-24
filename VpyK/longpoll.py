@@ -47,6 +47,6 @@ class longpoll:
 
     def logging(self, text):
         if self.log:
-            print(text)
+            print("--logging" + str(text))
 
 

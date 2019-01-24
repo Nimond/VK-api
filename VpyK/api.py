@@ -3,9 +3,9 @@ from VpyK.longpoll import longpoll
 
 
 class vkapi(methods, longpoll):
-    def __init__(self, token, v = 'last', polling = 1, log = 1):
+    def __init__(self, token, v = 'last', polling = 1):
         self.token = token
-        self.log = log
+        self.log = 1
 
         if v == 'last':
             from bs4 import BeautifulSoup
