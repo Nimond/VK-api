@@ -13,6 +13,7 @@ for a in arr:
 import json
 import requests
 import time
+import random
 
 class methods:
     def test(self):
@@ -937,8 +938,23 @@ class methods:
         pass
 
 
-    def messages_send(self):
-        pass
+    def messages_send(self, user_id, message, peer_id=None):
+        if peer_id is None:
+	    peer_id = user_id
+	while True:
+            self.reset_params()
+            self.params['user_id'] = user_id
+            self.params['peer_id'] = peer_id
+            self.params['random_id'] = random.randint(0, 99999)
+            self.params['message'] = message
+		
+            r = requests.get('https://api.vk.com/method/messages.send', params = self.params)
+            r = json.loads(r.text)
+            if r.get('response'):
+                return r
+            else:
+                time.sleep(0.5)
+                self.logging(r)
 
 
     def messages_setActivity(self):
